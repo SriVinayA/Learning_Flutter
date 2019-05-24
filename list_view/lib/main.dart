@@ -11,12 +11,14 @@ class MyApp extends StatelessWidget {
         appBar: new AppBar(
           title: new Text("Home Page"),
         ),
+
         body: new Center(
           child: new Text("Hello World", style: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.bold
           ))
         ),
+        
         floatingActionButton: FloatingActionButton(
           onPressed: (){},
           child: Icon(Icons.add),
@@ -28,13 +30,13 @@ class MyApp extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.all(0),
             children: <Widget>[
+
               UserAccountsDrawerHeader(accountEmail: Text("srivinay.appari@gmail.com"),
               accountName: Text("Sri Vinay"),
               currentAccountPicture: CircleAvatar(
                 child: Text("V"),
               ),
               ),
-
 
               ListTile(
                 onTap: () {},
@@ -43,9 +45,9 @@ class MyApp extends StatelessWidget {
                   width: 50,
                   height: 30,
                   ),
-                  title: Text("Vinay"),
-                  subtitle: Text("CSE"),
-                  trailing: Icon(Icons.delete),
+                title: Text("Vinay"),
+                subtitle: Text("CSE"),
+                trailing: Icon(Icons.delete),
               )
             ],
           ),
