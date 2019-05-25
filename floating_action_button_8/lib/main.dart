@@ -6,8 +6,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "My Application",
       home: new HomePage(),
+      theme: new ThemeData(
+        primarySwatch: Colors.green,
+        brightness: Brightness.light,
+        //brightness: Brightness.dark,
+        accentColor: Colors.redAccent,
+      ),
     );
   }
 }
@@ -37,19 +44,9 @@ class _HomePageState extends State<HomePage> {
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-
-            new Text(mytext, style: new TextStyle(
-              fontSize: 22.0
-            ),),
-
-            new RaisedButton(
-              child: new Text("Click", style: new TextStyle(
-                color: Colors.white,
-                fontSize: 20.0,
-              ),),
-              onPressed: _changeText,
-              color: Colors.blue,
-              
+            new Text(
+              mytext,
+              style: new TextStyle(fontSize: 22.0),
             ),
           ],
         ),
@@ -60,9 +57,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: AppBar(
-          title: new Text("Home Page"),
-        ),
-        body: _bodyWidget());
+      appBar: AppBar(
+        title: new Text("Home Page"),
+      ),
+      body: _bodyWidget(),
+      floatingActionButton: new FloatingActionButton(
+        child: new Icon(Icons.add_box),
+        onPressed: _changeText,
+      ),
+    );
   }
 }

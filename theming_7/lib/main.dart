@@ -6,8 +6,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "My Application",
       home: new HomePage(),
+      theme: new ThemeData(
+        primarySwatch: Colors.green,
+        //brightness: Brightness.light,
+        brightness: Brightness.dark,
+        accentColor: Colors.redAccent,
+      ),
     );
   }
 }
@@ -46,6 +53,7 @@ class _HomePageState extends State<HomePage> {
               child: new Text("Click", style: new TextStyle(
                 color: Colors.white,
                 fontSize: 20.0,
+                fontStyle: FontStyle.italic,
               ),),
               onPressed: _changeText,
               color: Colors.blue,
