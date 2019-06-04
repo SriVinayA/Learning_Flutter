@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'sorting/bubble.dart';
+import 'sorting/insertion.dart';
+import 'sorting/merge.dart';
+import 'sorting/selection.dart';
+import 'sorting/shell.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,6 +16,10 @@ class MyApp extends StatelessWidget {
         home: HomePage(),
         routes: <String, WidgetBuilder>{
           "/BubbleSort": (BuildContext context) => BubbleSort("Bubble Sort"),
+          "/MergeSort": (BuildContext context) => MergeSort("Merge Sort"),
+          "/InsertionSort": (BuildContext context) => InsertionSort("Insertion Sort"),
+          "/ShellSort": (BuildContext context) => ShellSort("Shell Sort"),
+          "/SelectionSort": (BuildContext context) => SelectionSort("Selection Sort"),
         });
   }
 }
@@ -43,6 +50,42 @@ class _HomePageState extends State<HomePage> {
               height: 30,
             ),
             title: Text("Bubble Sort"),
+          ),
+          ListTile(
+            onTap: () => Navigator.of(context).pushNamed("/MergeSort"),
+            leading: Image.network(
+              "http://www.pure-informatique.com/wp-content/uploads/2017/05/open-book.png",
+              width: 30,
+              height: 30,
+            ),
+            title: Text("Merge Sort"),
+          ),
+          ListTile(
+            onTap: () => Navigator.of(context).pushNamed("/InsertionSort"),
+            leading: Image.network(
+              "http://www.pure-informatique.com/wp-content/uploads/2017/05/open-book.png",
+              width: 30,
+              height: 30,
+            ),
+            title: Text("Insertion Sort"),
+          ),
+          ListTile(
+            onTap: () => Navigator.of(context).pushNamed("/ShellSort"),
+            leading: Image.network(
+              "http://www.pure-informatique.com/wp-content/uploads/2017/05/open-book.png",
+              width: 30,
+              height: 30,
+            ),
+            title: Text("Shell Sort"),
+          ),
+          ListTile(
+            onTap: () => Navigator.of(context).pushNamed("/SelectionSort"),
+            leading: Image.network(
+              "http://www.pure-informatique.com/wp-content/uploads/2017/05/open-book.png",
+              width: 30,
+              height: 30,
+            ),
+            title: Text("Selection Sort"),
           ),
         ],
       ),
